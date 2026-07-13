@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistem Informasi Universitas Pattimura (UNPATTI) - Portal Informasi Mahasiswa. Temukan informasi sejarah, lokasi, fakultas, video profil, dan akses cepat portal akademis.">
+    <meta name="author" content="Universitas Pattimura">
+    <title>Sistem Informasi Universitas Pattimura - Portal Mahasiswa</title>
+    
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+    <!-- Top Progress Bar (Scroll Indicator) -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo-area">
+                <!-- Custom SVG Styled UNPATTI Logo Symbol -->
+                <svg viewBox="0 0 100 100" class="logo-svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="var(--accent)" stroke-width="6"/>
+                    <polygon points="50,15 80,75 20,75" fill="var(--accent-glow)"/>
+                    <path d="M 50 25 L 70 70 L 30 70 Z" fill="var(--primary)" />
+                    <circle cx="50" cy="50" r="10" fill="var(--accent)"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-title">UNPATTI</span>
+                    <span class="logo-subtitle">Universitas Pattimura</span>
+                </div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#hero" class="active"><i class="fa-solid fa-house"></i> Beranda</a>
+                <a href="#dashboard"><i class="fa-solid fa-chart-simple"></i> Dashboard</a>
+                <a href="#fakultas"><i class="fa-solid fa-graduation-cap"></i> Fakultas</a>
+                <a href="#sejarah"><i class="fa-solid fa-clock-rotate-left"></i> Sejarah</a>
+                <a href="#media"><i class="fa-solid fa-images"></i> Galeri</a>
+                <a href="#portal" class="nav-portal-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> Akses Portal</a>
+            </nav>
+
+            <div class="nav-controls">
+                <button id="theme-toggle" aria-label="Toggle Theme" class="theme-btn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Open Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer">
+        <button class="close-drawer-btn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="drawer-links">
+            <a href="#hero" class="drawer-link"><i class="fa-solid fa-house"></i> Beranda</a>
+            <a href="#dashboard" class="drawer-link"><i class="fa-solid fa-chart-simple"></i> Dashboard</a>
+            <a href="#fakultas" class="drawer-link"><i class="fa-solid fa-graduation-cap"></i> Fakultas</a>
+            <a href="#sejarah" class="drawer-link"><i class="fa-solid fa-clock-rotate-left"></i> Sejarah</a>
+            <a href="#media" class="drawer-link"><i class="fa-solid fa-images"></i> Galeri</a>
+            <a href="#portal" class="drawer-link drawer-portal-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> Akses Portal</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg" style="background-image: linear-gradient(180deg, rgba(10, 25, 47, 0.7) 0%, rgba(10, 25, 47, 0.9) 100%), url('assets/campus_hero.png');"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="tagline">Sistem Informasi Akademik & Portal Kampus</span>
+                    <h1 class="hero-title">Kampus Orang Basudara</h1>
+                    <p class="hero-description">Selamat datang di Portal Informasi Universitas Pattimura (UNPATTI), pusat layanan informasi pendidikan tinggi terbaik di Maluku yang berlandaskan sesanti <strong>"Hotumese"</strong> (Berkembang dalam Tantangan).</p>
+                    <div class="hero-buttons">
+                        <a href="#portal" class="btn btn-primary">Portal Mahasiswa <i class="fa-solid fa-chevron-right"></i></a>
+                        <a href="#dashboard" class="btn btn-outline">Profil Kampus <i class="fa-solid fa-circle-info"></i></a>
+                    </div>
+                </div>
+                <div class="hero-card glass-effect">
+                    <div class="card-header">
+                        <span class="status-indicator"></span>
+                        <span class="card-status-text">Status Sistem: Normal</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Kalender Akademik</h3>
+                        <ul class="academic-timeline">
+                            <li>
+                                <span class="date">Jul 2026</span>
+                                <span class="text">Pengisian KRS Semester Ganjil 2026/2027</span>
+                            </li>
+                            <li>
+                                <span class="date">Agt 2026</span>
+                                <span class="text">Awal Perkuliahan Semester Ganjil</span>
+                            </li>
+                            <li>
+                                <span class="date">Okt 2026</span>
+                                <span class="text">Dies Natalis UNPATTI ke-70</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="wave-shape">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,88.43,26.85,152.12,44.22,224,66.19,321.39,56.44Z" fill="var(--bg-primary)"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard-section section-padding">
+            <div class="container">
+                <div class="section-header text-center animate-reveal">
+                    <span class="section-tag">Dashboard Utama</span>
+                    <h2>Sekilas Tentang Universitas Pattimura</h2>
+                    <p class="section-subtitle">Perguruan tinggi negeri tertua dan terbesar di Maluku, mencetak lulusan unggul berorientasi kelautan kepulauan.</p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card animate-reveal">
+                        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number" data-target="1956">0</span>
+                            <span class="stat-label">Tahun Berdiri</span>
+                        </div>
+                    </div>
+                    <div class="stat-card animate-reveal" style="animation-delay: 0.1s;">
+                        <div class="stat-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number" data-target="9">0</span>
+                            <span class="stat-label">Fakultas Utama</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-red animate-reveal" style="animation-delay: 0.2s;">
+                        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number" data-target="25000">0</span>
+                            <span class="stat-label">Mahasiswa Aktif</span>
+                        </div>
+                    </div>
+                    <div class="stat-card animate-reveal" style="animation-delay: 0.3s;">
+                        <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-text">Unggul</span>
+                            <span class="stat-label">Akreditasi BAN-PT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Highlights -->
+                <div class="profile-details-grid">
+                    <div class="rector-welcome glass-effect animate-reveal">
+                        <div class="rector-image-wrapper">
+                            <div class="rector-photo-placeholder">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <div class="rector-message">
+                            <blockquote>"Di tengah tantangan global, Universitas Pattimura berkomitmen untuk terus berinovasi dan meningkatkan kualitas pendidikan tinggi berorientasi pada pengembangan sumber daya kelautan kepulauan."</blockquote>
+                            <cite>— Prof. Dr. Fredy Leiwakabessy, M.Pd. (Rektor UNPATTI)</cite>
+                        </div>
+                    </div>
+                    <div class="quick-profile-info animate-reveal" style="animation-delay: 0.1s;">
+                        <h3>Informasi Umum Kampus</h3>
+                        <table class="profile-table">
+                            <tr>
+                                <th>Nama Resmi</th>
+                                <td>Universitas Pattimura (UNPATTI)</td>
+                            </tr>
+                            <tr>
+                                <th>Jenis Lembaga</th>
+                                <td>Perguruan Tinggi Negeri Badan Layanan Umum (PTN-BLU)</td>
+                            </tr>
+                            <tr>
+                                <th>Moto</th>
+                                <td>Hotumese (Berkembang dalam Tantangan)</td>
+                            </tr>
+                            <tr>
+                                <th>Lokasi Utama</th>
+                                <td>Jl. Ir. M. Putuhena, Poka, Ambon, Maluku, Indonesia</td>
+                            </tr>
+                            <tr>
+                                <th>Luas Area</th>
+                                <td>± 50 Hektar</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculties Section -->
+        <section id="fakultas" class="facultas-section section-padding">
+            <div class="container">
+                <div class="section-header text-center animate-reveal">
+                    <span class="section-tag">Akademik</span>
+                    <h2>Fakultas di Universitas Pattimura</h2>
+                    <p class="section-subtitle">Temukan berbagai program studi menarik yang tersebar di 9 Fakultas utama kami.</p>
+                </div>
+
+                <!-- Search and Filter -->
+                <div class="filter-wrapper animate-reveal">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="faculty-search" placeholder="Cari nama fakultas atau program studi...">
+                    </div>
+                    <div class="filter-tags">
+                        <button class="filter-btn active" data-filter="all">Semua Bidang</button>
+                        <button class="filter-btn" data-filter="sains">Sains & Teknik</button>
+                        <button class="filter-btn" data-filter="sosial">Sosial & Humaniora</button>
+                        <button class="filter-btn" data-filter="medis">Medis</button>
+                    </div>
+                </div>
+
+                <!-- Faculties Cards Grid -->
+                <div class="facultas-grid" id="facultas-container">
+                    
+                    <!-- Hukum -->
+                    <div class="facultas-card animate-reveal" data-category="sosial" data-keywords="hukum perdata pidana tata negara">
+                        <div class="fac-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h3>Fakultas Hukum</h3>
+                        <p class="fac-meta">Tahun Lahir: 1956</p>
+                        <p class="fac-desc">Fakultas tertua yang mengawali berdirinya UNPATTI, mendidik profesional hukum yang kompeten di Indonesia Timur.</p>
+                        <button class="fac-detail-btn" onclick="toggleFacDetails(this)">
+                            Program Studi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="fac-details">
+                            <ul>
+                                <li>S1 Ilmu Hukum</li>
+                                <li>S2 Hukum (Magister)</li>
+                                <li>S3 Ilmu Hukum (Doktor)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Teknik -->
+                    <div class="facultas-card animate-reveal" data-category="sains" data-keywords="teknik sipil mesin industri elektro perkapalan perencanaan sistem informasi">
+                        <div class="fac-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3>Fakultas Teknik</h3>
+                        <p class="fac-meta">Tahun Lahir: 1970</p>
+                        <p class="fac-desc">Menyelenggarakan pendidikan rekayasa berkualitas tinggi dengan spesialisasi teknik kelautan dan sipil kepulauan.</p>
+                        <button class="fac-detail-btn" onclick="toggleFacDetails(this)">
+                            Program Studi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="fac-details">
+                            <ul>
+                                <li>S1 Teknik Sipil</li>
+                                <li>S1 Teknik Mesin</li>
+                                <li>S1 Teknik Elektro</li>
+                                <li>S1 Teknik Perkapalan</li>
+                                <li>S1 Perencanaan Wilayah & Kota</li>
+                                <li>S1 Sistem Informasi (Prodi Baru!)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- FKIP -->
+                    <div class="facultas-card animate-reveal" data-category="sosial" data-keywords="keguruan guru pendidikan biologi sejarah bahasa inggris matematika olahraga paud sd">
+                        <div class="fac-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3>Fakultas Keguruan dan Ilmu Pendidikan</h3>
+                        <p class="fac-meta">Tahun Lahir: 1961</p>
+                        <p class="fac-desc">Pusat pendidikan calon pendidik dan guru profesional untuk memajukan pendidikan di kepulauan Maluku.</p>
+                        <button class="fac-detail-btn" onclick="toggleFacDetails(this)">
+                            Program Studi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="fac-details">
+                            <ul>
+                                <li>S1 Pendidikan Biologi / Matematika</li>
+                                <li>S1 Pendidikan Bahasa Inggris / Indonesia</li>
+                                <li>S1 PGSD / PGPAUD</li>
+                                <li>S1 Pendidikan Jasmani & Kesehatan</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- FEB -->
+                    <div class="facultas-card animate-reveal" data-category="sosial" data-keywords="ekonomi bisnis manajemen akuntansi pembangunan">
+                        <div class="fac-icon"><i class="fa-solid fa-wallet"></i></div>
+                        <h3>Fakultas Ekonomi dan Bisnis</h3>
+                        <p class="fac-meta">Tahun Lahir: 1961</p>
+                        <p class="fac-desc">Melahirkan pakar ekonomi, wirausahawan inovatif, dan akuntan berintegritas berdaya saing global.</p>
+                        <button class="fac-detail-btn" onclick="toggleFacDetails(this)">
+                            Program Studi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="fac-details">
+                            <ul>
+                                <li>S1 Manajemen</li>
+                                <li>S1 Akuntansi</li>
+                                <li>S1 Ekonomi Pembangunan</li>
+                                <li>S2 Manajemen / Akuntansi (Magister)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- FMIPA -->
+                    <div class="facultas-card animate-reveal" data-category="sains" data-keywords="mipa matematika fisika kimia biologi ilmu komputer statistika">
+                        <div class="fac-icon"><i class="fa-solid fa-flask-vial"></i></div>
+                        <h3>Fakultas MIPA</h3>
+                        <p class="fac-meta">Tahun Lahir: 1998</p>
+                        <p class="fac-desc">Wadah pengembangan ilmu dasar dan riset terapan di bidang matematika dan sains di kawasan kepulauan.</p>
+                        <button class="fac-detail-btn" onclick="toggleFacDetails(this)">
+                            Program Studi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="fac-details">
+                            <ul>
+                                <li>S1 Matematika</li>
+                                <li>S1 Fisika</li>
+                                <li>S1 Kimia</li>
+                                <li>S1 Biologi</li>
+                                <li>S1 Statistika</li>
+                                <li>S1 Ilmu Komputer</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Kedokteran -->
+                    <div class="facultas-card animate-reveal" data-category="medis" data-keywords="kedokteran dokter medis kesehatan">
+                        <div class="fac-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                        <h3>Fakultas Kedokteran</h3>
+                        <p class="fac-meta">Tahun Lahir: 2008</p>
+                        <p class="fac-desc">Fakultas kedokteran unggulan dengan kekhasan penanganan medis kepulauan dan darurat kelautan.</p>
+                        <button class="fac-detail-btn" onclick="toggleFacDetails(this)">
+                            Program Studi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="fac-details">
+                            <ul>
+                                <li>S1 Pendidikan Dokter</li>
+                                <li>Profesi Dokter</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Perikanan -->
+                    <div class="facultas-card animate-reveal" data-category="sains" data-keywords="perikanan kelautan laut ikan budidaya tangkap hasil">
+                        <div class="fac-icon"><i class="fa-solid fa-fish"></i></div>
+                        <h3>Fakultas Perikanan & Ilmu Kelautan</h3>
+                        <p class="fac-meta">Tahun Lahir: 1982</p>
+                        <p class="fac-desc">Mempelopori ilmu perikanan laut dalam dan teknologi kelautan guna mengelola potensi bahari kepulauan Maluku.</p>
+                        <button class="fac-detail-btn" onclick="toggleFacDetails(this)">
+                            Program Studi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="fac-details">
+                            <ul>
+                                <li>S1 Sumberdaya Perairan</li>
+                                <li>S1 Akuakultur (Budidaya Perairan)</li>
+                                <li>S1 Pemanfaatan Sumberdaya Perikanan</li>
+                                <li>S1 Teknologi Hasil Perikanan</li>
+                                <li>S1 Ilmu Kelautan</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Pertanian -->
+                    <div class="facultas-card animate-reveal" data-category="sains" data-keywords="pertanian agroteknologi kehutanan peternakan tani pohon">
+                        <div class="fac-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <h3>Fakultas Pertanian</h3>
+                        <p class="fac-meta">Tahun Lahir: 1963</p>
+                        <p class="fac-desc">Mengembangkan teknologi budidaya tanaman tropis, kehutanan berkelanjutan, dan industri peternakan lokal.</p>
+                        <button class="fac-detail-btn" onclick="toggleFacDetails(this)">
+                            Program Studi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="fac-details">
+                            <ul>
+                                <li>S1 Agroteknologi</li>
+                                <li>S1 Kehutanan</li>
+                                <li>S1 Peternakan</li>
+                                <li>S1 Agribisnis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- FISIP -->
+                    <div class="facultas-card animate-reveal" data-category="sosial" data-keywords="fisip sosial politik negara administrasi komunikasi sosiologi">
+                        <div class="fac-icon"><i class="fa-solid fa-users-rectangle"></i></div>
+                        <h3>Fakultas Ilmu Sosial & Ilmu Politik</h3>
+                        <p class="fac-meta">Tahun Lahir: 1961</p>
+                        <p class="fac-desc">Melahirkan profesional administrasi negara, analis politik, komunikator ulung, dan sosiolog peka sosial.</p>
+                        <button class="fac-detail-btn" onclick="toggleFacDetails(this)">
+                            Program Studi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="fac-details">
+                            <ul>
+                                <li>S1 Administrasi Publik</li>
+                                <li>S1 Ilmu Pemerintahan</li>
+                                <li>S1 Sosiologi</li>
+                                <li>S1 Ilmu Komunikasi</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- History Timeline Section -->
+        <section id="sejarah" class="sejarah-section section-padding">
+            <div class="container">
+                <div class="section-header text-center animate-reveal">
+                    <span class="section-tag">Milestone Kampus</span>
+                    <h2>Sejarah Perkembangan</h2>
+                    <p class="section-subtitle">Jelajahi garis waktu sejarah pendirian Universitas Pattimura sejak tahun 1955 hingga saat ini.</p>
+                </div>
+
+                <div class="timeline">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item animate-reveal" data-side="left">
+                        <div class="timeline-dot"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="timeline-content glass-effect">
+                            <span class="timeline-year">20 Juli 1955</span>
+                            <h3>Yayasan Perguruan Tinggi Maluku Irian Barat</h3>
+                            <p>Diprakarsai oleh Dr. J.B. Sitanala bersama tokoh masyarakat, dibentuk sebuah yayasan untuk merintis perguruan tinggi pertama di kepulauan Maluku.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item animate-reveal" data-side="right" style="animation-delay: 0.1s;">
+                        <div class="timeline-dot"><i class="fa-solid fa-building"></i></div>
+                        <div class="timeline-content glass-effect">
+                            <span class="timeline-year">3 Oktober 1956</span>
+                            <h3>Hari Lahir Universitas (Fakultas Hukum)</h3>
+                            <p>Fakultas Hukum didirikan secara resmi, menjadi fakultas pertama sekaligus tonggak sejarah yang disepakati sebagai <strong>Hari Lahir Universitas Pattimura</strong>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item animate-reveal" data-side="left" style="animation-delay: 0.2s;">
+                        <div class="timeline-dot"><i class="fa-solid fa-award"></i></div>
+                        <div class="timeline-content glass-effect">
+                            <span class="timeline-year">8 Agustus 1962</span>
+                            <h3>Negerisasi Perguruan Tinggi Maluku</h3>
+                            <p>Melalui Keputusan Menteri PTIP No. 99 Tahun 1962, Perguruan Tinggi Maluku resmi diubah statusnya menjadi universitas negeri.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item animate-reveal" data-side="right" style="animation-delay: 0.3s;">
+                        <div class="timeline-dot"><i class="fa-solid fa-id-card"></i></div>
+                        <div class="timeline-content glass-effect">
+                            <span class="timeline-year">23 April 1963</span>
+                            <h3>Pengukuhan Nama "Universitas Pattimura"</h3>
+                            <p>Nama pahlawan nasional asal Maluku, Kapitan Pattimura, dikukuhkan sebagai nama universitas secara resmi oleh Presiden Soekarno melalui Kepres No. 66 Tahun 1963.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item animate-reveal" data-side="left" style="animation-delay: 0.4s;">
+                        <div class="timeline-dot"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="timeline-content glass-effect">
+                            <span class="timeline-year">Kini (Era BLU)</span>
+                            <h3>Menuju World Class University</h3>
+                            <p>Menjadi Badan Layanan Umum (BLU) dengan 9 fakultas, ratusan program studi terakreditasi nasional & internasional, serta riset kemaritiman kelas dunia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media and Gallery Section -->
+        <section id="media" class="media-section section-padding">
+            <div class="container">
+                <div class="section-header text-center animate-reveal">
+                    <span class="section-tag">Media Informasi</span>
+                    <h2>Galeri Visual & Video Profil</h2>
+                    <p class="section-subtitle">Kenali lebih dekat Universitas Pattimura melalui cuplikan video profil dan keindahan fasilitas kami.</p>
+                </div>
+
+                <div class="media-grid">
+                    <!-- YouTube Video Embed -->
+                    <div class="video-container animate-reveal">
+                        <h3>Video Profil Resmi UNPATTI</h3>
+                        <div class="video-wrapper glass-effect">
+                            <!-- Embedded YouTube Video using the real video ID kY0wU3s90-Y -->
+                            <iframe src="https://www.youtube.com/embed/kY0wU3s90-Y?rel=0&amp;showinfo=0" title="Profil Universitas Pattimura" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Photo Slider/Gallery -->
+                    <div class="photo-gallery-wrapper animate-reveal" style="animation-delay: 0.1s;">
+                        <h3>Galeri Foto Fasilitas</h3>
+                        <div class="slider-container glass-effect">
+                            <div class="slides">
+                                <!-- Slide 1 -->
+                                <div class="slide active">
+                                    <img src="assets/campus_hero.png" alt="Kampus Universitas Pattimura">
+                                    <div class="slide-caption">
+                                        <h4>Gedung Rektorat & Kampus Poka</h4>
+                                        <p>Terletak di pesisir Teluk Ambon yang asri dan strategis.</p>
+                                    </div>
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="slide">
+                                    <img src="assets/computer_lab.png" alt="Laboratorium Sistem Informasi">
+                                    <div class="slide-caption">
+                                        <h4>Laboratorium Komputer Terpadu</h4>
+                                        <p>Mendukung perkuliahan bidang Sistem Informasi dan Teknologi Komputer.</p>
+                                    </div>
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="slide">
+                                    <img src="assets/library.png" alt="Perpustakaan Universitas Pattimura">
+                                    <div class="slide-caption">
+                                        <h4>Perpustakaan Pusat UNPATTI</h4>
+                                        <p>Menyediakan ribuan literatur digital dan ruang belajar modern nyaman.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slider Controls -->
+                            <button class="slider-btn prev-btn" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="slider-btn next-btn" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            
+                            <!-- Slider Dots -->
+                            <div class="slider-dots">
+                                <span class="dot active" onclick="setCurrentSlide(0)"></span>
+                                <span class="dot" onclick="setCurrentSlide(1)"></span>
+                                <span class="dot" onclick="setCurrentSlide(2)"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Portal Access Section (Akses Portal) -->
+        <section id="portal" class="portal-section section-padding">
+            <div class="container">
+                <div class="section-header text-center animate-reveal">
+                    <span class="section-tag">Layanan Terpadu</span>
+                    <h2>Akses Portal Mahasiswa</h2>
+                    <p class="section-subtitle">Pusat gerbang layanan administrasi, perkuliahan online, dan perpustakaan digital terintegrasi.</p>
+                </div>
+
+                <div class="portal-grid">
+                    <!-- Card SIAKAD -->
+                    <a href="https://siakad.unpatti.ac.id" target="_blank" rel="noopener noreferrer" class="portal-card animate-reveal">
+                        <div class="portal-card-badge">Portal Utama</div>
+                        <div class="portal-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                        <h3>SIAKAD UNPATTI</h3>
+                        <p>Sistem Informasi Akademik untuk pengisian KRS, melihat nilai KHS, tagihan UKT, dan progres studi mahasiswa.</p>
+                        <span class="portal-link-text">Akses SIAKAD <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </a>
+
+                    <!-- Card LMS -->
+                    <a href="https://lms.unpatti.ac.id" target="_blank" rel="noopener noreferrer" class="portal-card animate-reveal" style="animation-delay: 0.1s;">
+                        <div class="portal-card-badge orange">Pembelajaran</div>
+                        <div class="portal-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>E-Learning (LMS)</h3>
+                        <p>Platform pembelajaran online terpadu untuk mengakses materi kuliah, tugas, kuis, dan interaksi perkuliahan daring.</p>
+                        <span class="portal-link-text">Akses E-Learning <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </a>
+
+                    <!-- Card DIGILIB -->
+                    <a href="http://digilib.unpatti.ac.id" target="_blank" rel="noopener noreferrer" class="portal-card animate-reveal" style="animation-delay: 0.2s;">
+                        <div class="portal-card-badge green">Kepustakaan</div>
+                        <div class="portal-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                        <h3>Digital Library</h3>
+                        <p>Akses perpustakaan digital, repositori skripsi, tesis, disertasi, serta jurnal ilmiah nasional & internasional.</p>
+                        <span class="portal-link-text">Akses Digilib <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </a>
+
+                    <!-- Card Yudisium -->
+                    <a href="https://wisuda.unpatti.ac.id" target="_blank" rel="noopener noreferrer" class="portal-card animate-reveal" style="animation-delay: 0.3s;">
+                        <div class="portal-card-badge purple">Kelulusan</div>
+                        <div class="portal-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>Portal Wisuda</h3>
+                        <p>Sistem informasi pendaftaran kelulusan, validasi dokumen wisuda, serta koordinasi kelulusan tingkat universitas.</p>
+                        <span class="portal-link-text">Akses Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Location Map Section -->
+        <section id="lokasi" class="map-section section-padding">
+            <div class="container">
+                <div class="map-grid">
+                    <div class="map-info animate-reveal">
+                        <span class="section-tag">Lokasi Kampus</span>
+                        <h2>Kampus Utama Poka</h2>
+                        <p>Universitas Pattimura berlokasi di daerah Poka, pesisir Teluk Ambon. Kampus ini dikelilingi pemandangan alam perbukitan dan lautan yang asri, menciptakan suasana kondusif untuk studi akademik.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Jl. Ir. M. Putuhena, Poka, Kec. Teluk Ambon, Kota Ambon, Maluku 97233</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <p>info@unpatti.ac.id | humas@unpatti.ac.id</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <p>+62 (911) 322626, 322627</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-embed-container glass-effect animate-reveal" style="animation-delay: 0.1s;">
+                        <!-- OpenStreetMap Interactive Iframe -->
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=128.18182945251468%2C-3.6601449839446487%2C128.19693565368655%2C-3.649646486047249&amp;layer=mapnik&amp;marker=-3.6548957813580457%2C128.18938255310059" style="border: 0; min-height: 350px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 100 100" class="logo-svg">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="var(--accent)" stroke-width="6"/>
+                        <polygon points="50,15 80,75 20,75" fill="var(--accent-glow)"/>
+                        <path d="M 50 25 L 70 70 L 30 70 Z" fill="var(--primary)" />
+                        <circle cx="50" cy="50" r="10" fill="var(--accent)"/>
+                    </svg>
+                    <span>UNPATTI</span>
+                </div>
+                <p>Membentuk sumber daya manusia unggul yang memiliki karakter kemaritiman demi pembangunan berkesinambungan di Maluku dan Indonesia.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://youtube.com/@unpattichannel7846" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#fakultas">Fakultas</a></li>
+                    <li><a href="#sejarah">Sejarah</a></li>
+                    <li><a href="#media">Galeri & Video</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Fakultas Populer</h4>
+                <ul>
+                    <li><a href="#fakultas">Fakultas Hukum</a></li>
+                    <li><a href="#fakultas">Fakultas Teknik</a></li>
+                    <li><a href="#fakultas">Fakultas Kedokteran</a></li>
+                    <li><a href="#fakultas">Fakultas MIPA</a></li>
+                    <li><a href="#fakultas">Fakultas Perikanan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Link Penting</h4>
+                <ul>
+                    <li><a href="https://unpatti.ac.id" target="_blank" rel="noopener noreferrer">Website Utama</a></li>
+                    <li><a href="https://siakad.unpatti.ac.id" target="_blank" rel="noopener noreferrer">SIAKAD</a></li>
+                    <li><a href="https://lms.unpatti.ac.id" target="_blank" rel="noopener noreferrer">E-Learning</a></li>
+                    <li><a href="http://pustaka.unpatti.ac.id" target="_blank" rel="noopener noreferrer">Perpustakaan</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 Universitas Pattimura. All Rights Reserved. Designed for Professional Information System Dashboard.</p>
+                <p>Motto: <span>Hotumese</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Custom App Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>
